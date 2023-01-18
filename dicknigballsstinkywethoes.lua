@@ -376,7 +376,6 @@ function disableSend()
     StarterGui:SetCore("ChatMakeSystemMessage", properties)
 end
 
-
 local HookChat = function(Bar)
     coroutine.wrap(function()
         if not table.find(Connected,Bar) then
@@ -391,7 +390,7 @@ local HookChat = function(Bar)
                         if getISOCode(Message:sub(2)) then
                             sendEnabled = true
                             target = Message:sub(2)
-                            properties.Text = "[TR]" .. target .. "has been selected"
+                            properties.Text = "[TR] " .. YourLang .. " has been selected"
                             StarterGui:SetCore("ChatMakeSystemMessage", properties)
                         else
                             properties.Text = "[TR] Invalid language"
