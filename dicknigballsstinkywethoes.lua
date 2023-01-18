@@ -276,13 +276,12 @@ local properties = {
 
 game:GetService("StarterGui"):SetCore("SendNotification",
     {
-        Title = "Chat Translator",
-        Text = "Ported to Google Translate",
-        Duration = 3
+        Title = "TrullzSec API Loaded",
+        Text = "Powered by TrullzSec API v0.02",
+        Duration = 4
     }
 )
 
-properties.Text = "Powered by TrullzSec API v0.02"
 properties.Text = "[TS] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
@@ -391,7 +390,7 @@ local HookChat = function(Bar)
                         if getISOCode(Message:sub(2)) then
                             sendEnabled = true
                             target = Message:sub(2)
-                            properties.Text = "[TS] " .. traget .. " selected"
+                            properties.Text = "[TS] " .. target .. " selected"
                             StarterGui:SetCore("ChatMakeSystemMessage", properties)
                         else
                             properties.Text = "[TS] Invalid language"
