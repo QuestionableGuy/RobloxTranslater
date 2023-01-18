@@ -390,6 +390,7 @@ local HookChat = function(Bar)
                     elseif Message:sub(1,1) == ">" and not Message:find(" ") then
                         if getISOCode(Message:sub(2)) then
                             sendEnabled = true
+                            properties.Text = "[TR]" .. Message:sub(2) .. "has been selected"
                             target = Message:sub(2)
                         else
                             properties.Text = "[TR] Invalid language"
