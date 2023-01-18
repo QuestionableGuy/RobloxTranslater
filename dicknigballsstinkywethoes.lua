@@ -269,7 +269,7 @@ end
 wait()
 
 local properties = {
-    Color = Color3.new(1,1,0);
+    Color = Color3.new(255,0,0);
     Font = Enum.Font.SourceSansItalic;
     TextSize = 16;
 }
