@@ -1,5 +1,5 @@
 if not game['Loaded'] then game['Loaded']:Wait() end; repeat wait(.06) until game:GetService('Players').LocalPlayer ~= nil
-local YourLang = "en" -- Language code that the messages are going to be translated to
+local YourLang = "en"
 
 local googlev = isfile'googlev.txt' and readfile'googlev.txt' or ''
 local request = request or syn.request
@@ -12,10 +12,8 @@ end
 
 local print,warn = outputHook(print), outputHook(warn)
 
--- // GOOGLE TRANSLATE // --
-
 local translate, getISOCode do
-    function googleConsent(Body) -- Because google really said: "Fuck you."
+    function googleConsent(Body)
         local args = {}
 
         for match in Body:gmatch('<input type="hidden" name=".-" value=".-">') do
@@ -26,7 +24,7 @@ local translate, getISOCode do
         writefile('googlev.txt', args.v)
     end
 
-    local function got(url, Method, Body) -- Basic version of https://www.npmjs.com/package/got using synapse's request API for google websites
+    local function got(url, Method, Body)
         Method = Method or "GET"
         
         local res = request({
@@ -298,8 +296,6 @@ function translateFrom(message)
     return {text, translation.from.language}
 end
 
--- // CHAT FUNCTIONS // --
-
 local CBar, Connected = LP['PlayerGui']:WaitForChild('Chat')['Frame'].ChatBarParentFrame['Frame'].BoxFrame['Frame'].ChatBar, {}
 local EventFolder = game:GetService('ReplicatedStorage'):WaitForChild('DefaultChatSystemChatEvents')
 local Chat do
@@ -331,7 +327,7 @@ local Chat do
     end]]
 end
 
-do -- :Chatted replacement!!
+do
     function get(plr, msg)
         print(msg)
         local tab = translateFrom(msg)
@@ -402,10 +398,8 @@ local HookChat = function(Bar)
                     elseif sendEnabled and not (Message:sub(1,3) == "/e " or Message:sub(1,7) == "/emote ") then
                         local og = Message
                         Message = translateTo(Message, target)
-                        --Bar.Text = Message
                         Chat(og, Message)
                     else
-                        --Bar.Text = Message
                         Chat(Message, Message)
                     end
                 end
