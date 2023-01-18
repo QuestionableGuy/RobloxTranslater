@@ -281,8 +281,9 @@ game:GetService("StarterGui"):SetCore("SendNotification",
         Duration = 3
     }
 )
-                  
-properties.Text = "[TR] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
+
+properties.Text = "Powered by TrullzSec API v0.02"
+properties.Text = "[TS] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
 function translateFrom(message)
@@ -372,7 +373,7 @@ end
 
 function disableSend()
     sendEnabled = false
-    properties.Text = "[TR] Sending Disabled"
+    properties.Text = "[TS] Sending Disabled"
     StarterGui:SetCore("ChatMakeSystemMessage", properties)
 end
 
@@ -390,10 +391,10 @@ local HookChat = function(Bar)
                         if getISOCode(Message:sub(2)) then
                             sendEnabled = true
                             target = Message:sub(2)
-                            properties.Text = "[TR] " .. YourLang .. " has been selected"
+                            properties.Text = "[TS] " .. traget .. " selected"
                             StarterGui:SetCore("ChatMakeSystemMessage", properties)
                         else
-                            properties.Text = "[TR] Invalid language"
+                            properties.Text = "[TS] Invalid language"
                             StarterGui:SetCore("ChatMakeSystemMessage", properties)
                         end
                     elseif sendEnabled and not (Message:sub(1,3) == "/e " or Message:sub(1,7) == "/emote ") then
