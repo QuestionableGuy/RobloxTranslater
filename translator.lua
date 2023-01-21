@@ -281,6 +281,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",
         Duration = 4
     }
 )
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/QuestionableGuy/TrullzSec-API/master/Connection-UI.lua', true))()
 
 properties.Text = "[TS] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 StarterGui:SetCore("ChatMakeSystemMessage", properties)
