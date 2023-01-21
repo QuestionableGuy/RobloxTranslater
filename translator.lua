@@ -428,4 +428,3 @@ BindHook['Event']:Connect(function()
     CBar = LP['PlayerGui'].Chat['Frame'].ChatBarParentFrame['Frame'].BoxFrame['Frame'].ChatBar
     HookChat(CBar)
 end)
-loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/QuestionableGuy/TrullzSec-API/master/Connection-UI.lua', true))()
